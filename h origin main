@@ -1,0 +1,24 @@
+[33mcommit 2d1a36f47cc1fee8f1ff64edc3e1b249d8143677[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: TatyanaSukhinina <potator.xzzz@yandex.ru>
+Date:   Wed May 7 11:06:22 2025 +0300
+
+    test commit
+
+[33mcommit b5fadbcba564763733ad685ded189da22e62bdf0[m
+Merge: 29bdbbf a3bb817
+Author: TatyanaSukhinina <potator.xzzz@yandex.ru>
+Date:   Wed May 7 11:02:32 2025 +0300
+
+    fix
+
+[33mcommit 29bdbbf6ba0b38ee2c935f9c62680c85249a7e66[m
+Author: TatyanaSukhinina <potator.xzzz@yandex.ru>
+Date:   Wed May 7 10:24:01 2025 +0300
+
+    initial commit
+
+[33mcommit a3bb817d9da45fa0a4bd97973e280a184c071e59[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: TatyanaSukhinina <potator.xzzz@yandex.ru>
+Date:   Wed May 7 10:12:19 2025 +0300
+
+    Initial commit
