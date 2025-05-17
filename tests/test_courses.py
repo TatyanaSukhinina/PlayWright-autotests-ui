@@ -2,6 +2,14 @@ import pytest
 from playwright.sync_api import sync_playwright, expect
 from playwright.sync_api import Page
 
+@pytest.mark.regression
+@pytest.mark.courses
+def test_successful_registration(registration_page, dashboard_page):
+    registration_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration")
+    registration_page.fill_email_form(email='user.name@gmail.com', username='username', password='password')
+    registration_page.click_registration_button()
+    dashboard_page.check_dashboard_title()
+
 
 @pytest.mark.regression
 @pytest.mark.courses
@@ -21,5 +29,3 @@ def test_empty_courses_list(chromium_page_with_state: Page):
     empty_view_description = chromium_page_with_state.get_by_test_id("courses-list-empty-view-description-text")
     expect(empty_view_description).to_be_visible()
     expect(empty_view_description).to_have_text("Results from the load test pipeline will be displayed here")
-
-
