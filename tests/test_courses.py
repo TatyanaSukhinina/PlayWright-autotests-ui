@@ -4,6 +4,31 @@ import pytest
 from playwright.sync_api import sync_playwright, expect
 from playwright.sync_api import Page
 
+from pages.courses_list_page import CoursesListPage
+from pages.create_course_page import CreateCoursePage
+from pages.dashbord_page import DashboardPage
+
+
+@pytest.mark.regression
+@pytest.mark.courses
+def test_dashboard_displaying(dashboard_with_state_page: DashboardPage):
+    dashboard_with_state_page.visit('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/dashboard')
+    dashboard_with_state_page.sidebar.check_visible()
+
+    dashboard_with_state_page.check_dashboard_title()
+
+
+def test_test_empty_courses_list(courses_list_with_state_page: CoursesListPage):
+    courses_list_with_state_page.visit('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses')
+    courses_list_with_state_page.navbar.check_visible("")
+    courses_list_with_state_page.sidebar.check_visible()
+
+    courses_list_with_state_page.check_visible_courses_title()
+    courses_list_with_state_page.check_visible_create_course_button()
+    courses_list_with_state_page.check_visible_empty_view()
+
+
+
 @pytest.mark.regression
 @pytest.mark.courses
 def test_successful_registration(registration_page, dashboard_page):
@@ -15,7 +40,7 @@ def test_successful_registration(registration_page, dashboard_page):
 
 @pytest.mark.regression
 @pytest.mark.courses
-def test_create_course(create_course_with_state_page, courses_list_page):
+def test_create_course(courses_list_page: CoursesListPage, create_course_with_state_page: CreateCoursePage):
     create_course_with_state_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create")
     create_course_with_state_page.check_visible_create_course_title()
     create_course_with_state_page.check_disabled_create_course_button()
