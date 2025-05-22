@@ -1,3 +1,7 @@
+import pytest
+
+from pages.dashbord_page import DashboardPage
+from pages.login_page import LoginPage
 
 
 class TestSuite:
@@ -12,3 +16,7 @@ class TestSuite:
         assert 5 == 5
         assert 5 < 3
         assert 5 > 3
+
+def test_all_charts_visible(dashboard_with_state_page: DashboardPage):
+    dashboard_with_state_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/dashboard")
+    dashboard_with_state_page.check_all_charts_visible()

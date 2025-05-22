@@ -11,8 +11,8 @@ def chromium_page(playwright: Playwright) -> Page:
 @pytest.fixture(scope = "session")
 def initialize_browser_state():
     with sync_playwright() as playwright:
-        brawser = playwright.chromium.launch(headless=False)
-        context = brawser.new_context()
+        browser = playwright.chromium.launch(headless=False)
+        context = browser.new_context()
         page = context.new_page()
 
         page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration")
@@ -29,7 +29,7 @@ def initialize_browser_state():
         registration_button.click()
 
         context.storage_state(path="browser-state.json")
-        brawser.close()
+        browser.close()
 
 @pytest.fixture()
 def chromium_page_with_state(initialize_browser_state, playwright: Playwright) -> Page:
