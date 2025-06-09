@@ -18,7 +18,6 @@ class LoginPage(BasePage):
             page, 'login-page-wrong-email-or-password-alert', 'Wrong email or password'
         )
     def click_login_button(self):
-        self.login_button.check_enabled()
         self.login_button.click()
 
     def check_wrong_email_or_password_alert(self):

@@ -36,8 +36,8 @@ def test_successful_registration(registration_page, dashboard_page):
     registration_page.registration.fill(email='user.name@gmail.com',password='password', username='username')
     registration_page.click_registration_button()
     dashboard_page.dashboard.check_visible()
-
-
+#
+#
 # @pytest.mark.regression
 # @pytest.mark.courses
 # def test_create_course(courses_list_page: CoursesListPage, create_course_with_state_page: CreateCoursePage):
