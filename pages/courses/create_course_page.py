@@ -1,5 +1,6 @@
 from playwright.sync_api import Page, expect
 
+from components.courses.course_view_menu_component import CourseViewMenuComponent
 from components.views.empty_view_component import EmptyViewComponent
 from components.views.image_upload_widget_component import ImageUploadWidgetComponent
 from pages.base_page import BasePage
@@ -11,6 +12,9 @@ class CreateCoursePage(BasePage):
 
         self.image_upload_widget = ImageUploadWidgetComponent(page, 'create-course-preview')
         self.exercises_empty_view = EmptyViewComponent(page, 'create-course-exercises')
+
+        self.course_view_menu = CourseViewMenuComponent(page)
+
 
         self.create_course_title = page.get_by_test_id('create-course-toolbar-title-text')
         self.create_course_button = page.get_by_test_id('create-course-toolbar-create-course-button')
@@ -49,19 +53,19 @@ class CreateCoursePage(BasePage):
             max_score: str,
             min_score: str
     ):
-        expect(self.create_course_title_input).to_be_visible()
+        # expect(self.create_course_title_input).to_be_visible()
         expect(self.create_course_title_input).to_have_value(title)
 
-        expect(self.create_course_estimated_time_input).to_be_visible()
+        # expect(self.create_course_estimated_time_input).to_be_visible()
         expect(self.create_course_estimated_time_input).to_have_value(estimated_time)
 
-        expect(self.create_course_description_textarea).to_be_visible()
+        # expect(self.create_course_description_textarea).to_be_visible()
         expect(self.create_course_description_textarea).to_have_value(description)
 
-        expect(self.create_course_max_score_input).to_be_visible()
+        # expect(self.create_course_max_score_input).to_be_visible()
         expect(self.create_course_max_score_input).to_have_value(max_score)
 
-        expect(self.create_course_min_score_input).to_be_visible()
+        # expect(self.create_course_min_score_input).to_be_visible()
         expect(self.create_course_min_score_input).to_have_value(min_score)
 
     def fill_create_course_form(

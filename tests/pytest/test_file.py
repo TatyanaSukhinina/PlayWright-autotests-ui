@@ -1,7 +1,4 @@
-import pytest
-
-from pages.dashbord_page import DashboardPage
-from pages.login_page import LoginPage
+from pages.dashbord.dashbord_page import DashboardPage
 
 
 class TestSuite:
