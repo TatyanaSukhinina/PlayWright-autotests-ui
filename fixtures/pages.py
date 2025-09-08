@@ -5,7 +5,7 @@ from pages.courses.courses_list_page import CoursesListPage
 from pages.courses.create_course_page import CreateCoursePage
 from pages.authentication.login_page import LoginPage
 from pages.authentication.registration_page import RegistrationPage
-from pages.dashbord.dashbord_page import DashboardPage
+from pages.dashboard.dashboard_page import DashboardPage
 
 #В этом файле хранятся  фикстуры,
 # отвечающие за инициализацию страниц.

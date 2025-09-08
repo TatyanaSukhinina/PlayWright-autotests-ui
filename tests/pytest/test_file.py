@@ -1,4 +1,4 @@
-from pages.dashbord.dashbord_page import DashboardPage
+from pages.dashboard.dashboard_page import DashboardPage
 
 
 class TestSuite:
