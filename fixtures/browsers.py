@@ -8,7 +8,7 @@ from pages.authentication.registration_page import RegistrationPage
 
 @pytest.fixture
 def chromium_page(request: SubRequest, playwright: Playwright) -> Page:  # Добавили аргумент request
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.chromium.launch(headless=True)
     context = browser.new_context(record_video_dir='./videos')  # Создаем контекст для новой сессии браузера
     context.tracing.start(screenshots=True, snapshots=True, sources=True)  # Включаем трейсинг
 
