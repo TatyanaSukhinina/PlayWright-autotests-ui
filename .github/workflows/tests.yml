@@ -26,6 +26,9 @@ jobs:
         with:
           python-version: '3.11'  # Устанавливаем версию Python 3.11 (можно заменить на другую версию)
 
+      - name: Start Xvfb
+        run: Xvfb :99 -screen 0 1024x768x24 &
+
       # 3. Шаг для установки всех зависимостей проекта
       - name: Install dependencies
         run: |
